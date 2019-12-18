@@ -1,5 +1,5 @@
-﻿using Microsoft.Win32;
-using System;
+﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Reflection;
@@ -18,19 +18,23 @@ namespace CryptedNotepad
         public MainWindow(string path)
         {
             InitializeComponent();
+
             FileAssociation.Associate("Crypted txt", Assembly.GetExecutingAssembly().Location);
-            AddToContextMenuNew();
+            FileAssociation.AddToContextMenuNew();
+
             //All events are here
             richTextBox.TextChanged += (s, e) =>
             {
                 lbl_status.Text = $"Total chars: {richTextBox.Text.Length}";
             };
+            tool_new.Click += new System.EventHandler(tool_new_Click);
             tool_open.Click += new EventHandler(tool_open_Click);
             tool_save.Click += new EventHandler(tool_save_Click);
-            tool_settings.Click += new EventHandler(tool_settings_Click);
-            tool_replace.Click += new EventHandler(tool_replace_Click);
-            tool_about.Click += new EventHandler(aboutToolStripMenuItem_Click);
             tool_saveAs.Click += new System.EventHandler(tool_saveAs_Click);
+            tool_fontSettings.Click += new EventHandler(tool_fontSettings_Click);
+            tool_replace.Click += new EventHandler(tool_replace_Click);
+            tool_about.Click += new EventHandler(tool_about_Click);
+            tool_exit.Click += new System.EventHandler(tool_exit_Click);
             Shown += (s, e) =>
             {
                 //update ui
@@ -63,17 +67,6 @@ namespace CryptedNotepad
                 }
                 LoadFile(path);
             };
-        }
-
-        void AddToContextMenuNew()
-        {
-            //PersistentHandler
-            RegistryKey rk = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Classes\.ctxt\ShellNew");
-            rk.SetValue("Filename", "");
-            rk = Registry.LocalMachine.CreateSubKey(@"SOFTWARE\Classes\.ctxt\PersistentHandler");
-            rk.SetValue("", "{5e941d80-bf96-11cd-b579-08002b30bfeb}");
-            rk.Flush();
-            rk.Close();
         }
 
         void tool_open_Click(object sender, EventArgs e)
@@ -139,7 +132,7 @@ namespace CryptedNotepad
             Thread thread = new Thread(() => SaveFile(FilePath));
             thread.Start();
         }
-        void tool_settings_Click(object sender, EventArgs e)
+        void tool_fontSettings_Click(object sender, EventArgs e)
         {
             FontDialog fd = new FontDialog();
             if (fd.ShowDialog() == DialogResult.OK)
@@ -259,7 +252,15 @@ namespace CryptedNotepad
             }
             #endregion
         }
-        void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        void tool_exit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+        void tool_new_Click(object sender, EventArgs e)
+        {
+            Process.Start(Assembly.GetExecutingAssembly().Location);
+        }
+        void tool_about_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Free open source software by diademoff\n" +
                             "github.com/diademoff");
@@ -476,23 +477,30 @@ namespace CryptedNotepad
         {
             if (Path.GetExtension(filePath) == ".txt")
             {
+                #region simple load txt
                 richTextBox.Text = File.ReadAllText(filePath, GetEncoding(filePath));
+                #endregion 
             }
             else
             {
+
                 if (new FileInfo(filePath).Length == 0)
                 {
+                    // if file is empty dont ask password
                     FilePath = filePath;
                     return;
                 }
+                #region ask password
                 try
                 {
                     Password = AskSinglePassword();
                 }
                 catch { return; }
+                #endregion
                 byte[] dataFile = File.ReadAllBytes(filePath);
                 try
                 {
+                    #region decrypt file
                     LockProgram();
                     new Task(() =>
                     {
@@ -512,6 +520,7 @@ namespace CryptedNotepad
                         }
                         catch { }
                     }).Start();
+                    #endregion
                 }
                 catch { MessageBox.Show("An error occurred while decrypting file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }

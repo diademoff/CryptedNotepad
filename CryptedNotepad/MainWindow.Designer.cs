@@ -35,10 +35,15 @@
             this.lbl_status = new System.Windows.Forms.Label();
             this.stripMenu = new System.Windows.Forms.MenuStrip();
             this.tool_File = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_new = new System.Windows.Forms.ToolStripMenuItem();
             this.tool_open = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.tool_save = new System.Windows.Forms.ToolStripMenuItem();
             this.tool_saveAs = new System.Windows.Forms.ToolStripMenuItem();
-            this.tool_settings = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_fontSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tool_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.tool_edit = new System.Windows.Forms.ToolStripMenuItem();
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tool_replace = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,13 +76,13 @@
             this.pnl_status.Size = new System.Drawing.Size(797, 20);
             this.pnl_status.TabIndex = 1;
             // 
-            // progressBar1
+            // progressBar
             // 
             this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar.Location = new System.Drawing.Point(173, 5);
-            this.progressBar.Name = "progressBar1";
+            this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(621, 10);
             this.progressBar.TabIndex = 3;
             // 
@@ -105,37 +110,78 @@
             // tool_File
             // 
             this.tool_File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tool_new,
             this.tool_open,
+            this.toolStripSeparator,
             this.tool_save,
             this.tool_saveAs,
-            this.tool_settings});
+            this.tool_fontSettings,
+            this.toolStripSeparator1,
+            this.toolStripSeparator2,
+            this.tool_exit});
             this.tool_File.Name = "tool_File";
             this.tool_File.Size = new System.Drawing.Size(35, 20);
-            this.tool_File.Text = "File";
+            this.tool_File.Text = "&File";
+            // 
+            // tool_new
+            // 
+            this.tool_new.Image = ((System.Drawing.Image)(resources.GetObject("tool_new.Image")));
+            this.tool_new.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tool_new.Name = "tool_new";
+            this.tool_new.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.tool_new.Size = new System.Drawing.Size(180, 22);
+            this.tool_new.Text = "&New";
             // 
             // tool_open
             // 
+            this.tool_open.Image = ((System.Drawing.Image)(resources.GetObject("tool_open.Image")));
+            this.tool_open.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tool_open.Name = "tool_open";
+            this.tool_open.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.tool_open.Size = new System.Drawing.Size(180, 22);
-            this.tool_open.Text = "Open";
+            this.tool_open.Text = "&Open";
+            // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
             // 
             // tool_save
             // 
+            this.tool_save.Image = ((System.Drawing.Image)(resources.GetObject("tool_save.Image")));
+            this.tool_save.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tool_save.Name = "tool_save";
+            this.tool_save.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.tool_save.Size = new System.Drawing.Size(180, 22);
-            this.tool_save.Text = "Save";
+            this.tool_save.Text = "&Save";
             // 
             // tool_saveAs
             // 
             this.tool_saveAs.Name = "tool_saveAs";
             this.tool_saveAs.Size = new System.Drawing.Size(180, 22);
-            this.tool_saveAs.Text = "Save as";
+            this.tool_saveAs.Text = "Save &As";
             // 
-            // tool_settings
+            // tool_fontSettings
             // 
-            this.tool_settings.Name = "tool_settings";
-            this.tool_settings.Size = new System.Drawing.Size(180, 22);
-            this.tool_settings.Text = "Font settings";
+            this.tool_fontSettings.Name = "tool_fontSettings";
+            this.tool_fontSettings.Size = new System.Drawing.Size(180, 22);
+            this.tool_fontSettings.Text = "Font settings";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // tool_exit
+            // 
+            this.tool_exit.Name = "tool_exit";
+            this.tool_exit.Size = new System.Drawing.Size(180, 22);
+            this.tool_exit.Text = "E&xit";
             // 
             // tool_edit
             // 
@@ -200,10 +246,6 @@
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.Panel pnl_status;
         private System.Windows.Forms.MenuStrip stripMenu;
-        private System.Windows.Forms.ToolStripMenuItem tool_File;
-        private System.Windows.Forms.ToolStripMenuItem tool_open;
-        private System.Windows.Forms.ToolStripMenuItem tool_save;
-        private System.Windows.Forms.ToolStripMenuItem tool_settings;
         private System.Windows.Forms.ToolStripMenuItem tool_edit;
         private System.Windows.Forms.ToolStripMenuItem findToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tool_replace;
@@ -211,7 +253,16 @@
         private System.Windows.Forms.ToolStripMenuItem tool_about;
         private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.ToolStripMenuItem tool_File;
+        private System.Windows.Forms.ToolStripMenuItem tool_new;
+        private System.Windows.Forms.ToolStripMenuItem tool_open;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripMenuItem tool_save;
         private System.Windows.Forms.ToolStripMenuItem tool_saveAs;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem tool_exit;
+        private System.Windows.Forms.ToolStripMenuItem tool_fontSettings;
     }
 }
 
