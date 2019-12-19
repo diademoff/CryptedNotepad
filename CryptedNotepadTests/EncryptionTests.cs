@@ -1,10 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CryptedNotepad;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CryptedNotepad.Tests
 {
@@ -12,17 +8,24 @@ namespace CryptedNotepad.Tests
     public class EncryptionTests
     {
         [TestMethod()]
-        public void EncryptDecryptStringTest()
+        public void EncryptionStringTest()
         {
-            string pass = RandomString(rnd.Next(10, 400));
-            string str = RandomString(rnd.Next(10, 400));
             Encryption encryption = new Encryption();
-            var encrypted = encryption.EncryptString(str, pass);
-            var decrypted = encryption.DecryptString(encrypted, pass);
 
-            Assert.AreEqual(encrypted, decrypted);
+            string key = RandomString(rnd.Next(5, 16));
+            string clear_str = RandomString(rnd.Next(100, 500));
+            byte[] enc = encryption.EncryptString(clear_str, key);
+            string dec = encryption.DecryptString(enc, key);
+
+            Assert.AreEqual(clear_str, dec);
         }
 
-        
+        Random rnd = new Random();
+        string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[rnd.Next(s.Length)]).ToArray());
+        }
     }
 }
