@@ -15,17 +15,19 @@ namespace CryptedNotepad
         public Encryption Encryption = new Encryption();
         string FilePath;
         string Password;
+        bool saved = true;
         public MainWindow(string path)
         {
             InitializeComponent();
 
-            FileAssociation.Associate("Crypted txt", Assembly.GetExecutingAssembly().Location);
+            FileAssociation.Associate($"{LocalStrings.Description}", Assembly.GetExecutingAssembly().Location);
             FileAssociation.AddToContextMenuNew();
 
             //All events are here
             richTextBox.TextChanged += (s, e) =>
             {
-                lbl_status.Text = $"Total chars: {richTextBox.Text.Length}";
+                saved = false;
+                lbl_status.Text = $"{LocalStrings.TotalChars}: {richTextBox.Text.Length}";
             };
             tool_new.Click += new System.EventHandler(tool_new_Click);
             tool_open.Click += new EventHandler(tool_open_Click);
@@ -47,7 +49,8 @@ namespace CryptedNotepad
                         {
                             this.Invoke(new MethodInvoker(() =>
                             {
-                                this.Text = Path.GetFileName(FilePath);
+                                string t = (saved) ? "" : "*";
+                                this.Text = Path.GetFileName(FilePath) + t;
                                 try
                                 {
                                     progressBar.Maximum = Encryption.MaxValueProgress;
@@ -73,7 +76,7 @@ namespace CryptedNotepad
         {
             OpenFileDialog ofd = new OpenFileDialog
             {
-                Filter = "Crypted txt (*.ctxt)|*.ctxt|Text files (*.txt)|*.txt"
+                Filter = $"{LocalStrings.Crypted_txt} (*.ctxt)|*.ctxt|{LocalStrings.Text_files} (*.txt)|*.txt"
             };
             if (ofd.ShowDialog() == DialogResult.OK)
             {
@@ -91,7 +94,7 @@ namespace CryptedNotepad
             {
                 SaveFileDialog sfd = new SaveFileDialog
                 {
-                    Filter = "Crypted txt (*.ctxt)|*.ctxt"
+                    Filter = $"{LocalStrings.Crypted_txt} (*.ctxt)|*.ctxt"
                 };
                 if (sfd.ShowDialog() != DialogResult.OK)
                 {
@@ -122,7 +125,7 @@ namespace CryptedNotepad
             catch { return; }
             SaveFileDialog sfd = new SaveFileDialog
             {
-                Filter = "Crypted txt (*.ctxt)|*.ctxt"
+                Filter = $"{LocalStrings.Crypted_txt} (*.ctxt)|*.ctxt"
             };
             if (sfd.ShowDialog() != DialogResult.OK)
             {
@@ -148,7 +151,7 @@ namespace CryptedNotepad
                 AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font,
                 ClientSize = new System.Drawing.Size(400, 225),
                 Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon"))),
-                Text = "Find string",
+                Text = $"{LocalStrings.Find_string}",
                 MaximizeBox = false,
                 MaximumSize = new System.Drawing.Size(400, 225),
                 MinimumSize = new System.Drawing.Size(400, 225),
@@ -165,7 +168,7 @@ namespace CryptedNotepad
                 Name = "btn_find",
                 Location = new Point(77, 150),
                 Width = 245,
-                Text = "Find"
+                Text = $"{LocalStrings.Find}"
             });
             findForm.Controls["txtbx"].KeyDown += (s, ee) =>
             {
@@ -174,14 +177,9 @@ namespace CryptedNotepad
                     (findForm.Controls["btn_find"] as Button).PerformClick();
                 }
             };
-            findForm.Controls.Add(new ProgressBar()
-            {
-                Name = "progressBar",
-                Dock = DockStyle.Bottom
-            });
             findForm.Controls["btn_find"].Click += (s, ee) =>
             {
-                FindText(findForm.Controls["txtbx"].Text, findForm.Controls["progressBar"] as ProgressBar);
+                FindText(findForm.Controls["txtbx"].Text, progressBar);
             };
             findForm.Show();
             findForm.FormClosing += (s, ee) =>
@@ -201,7 +199,7 @@ namespace CryptedNotepad
                 AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font,
                 ClientSize = new System.Drawing.Size(400, 225),
                 Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon"))),
-                Text = "Replace string",
+                Text = $"{LocalStrings.Replace_string}",
                 MaximizeBox = false,
                 MaximumSize = new System.Drawing.Size(400, 225),
                 MinimumSize = new System.Drawing.Size(400, 225),
@@ -232,7 +230,7 @@ namespace CryptedNotepad
                 Name = "btn_replace",
                 Location = new Point(77, 150),
                 Width = 245,
-                Text = "Replace"
+                Text = $"{LocalStrings.Replace}"
             });
             askPassForm.Controls["btn_replace"].Click += (s, ee) =>
             {
@@ -262,8 +260,8 @@ namespace CryptedNotepad
         }
         void tool_about_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Free open source software by diademoff\n" +
-                            "github.com/diademoff");
+            MessageBox.Show($"{LocalStrings.about}\n" +
+                             "github.com/diademoff");
         }
 
         /// <summary>
@@ -322,7 +320,7 @@ namespace CryptedNotepad
                 AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font,
                 ClientSize = new System.Drawing.Size(400, 225),
                 Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon"))),
-                Text = "Enter password",
+                Text = $"{LocalStrings.Enter_password}",
                 MaximizeBox = false,
                 MaximumSize = new System.Drawing.Size(400, 225),
                 MinimumSize = new System.Drawing.Size(400, 225),
@@ -355,7 +353,7 @@ namespace CryptedNotepad
                 Name = "btn_apply",
                 Location = new Point(77, 150),
                 Width = 245,
-                Text = "Apply"
+                Text = $"{LocalStrings.Apply}"
             });
             askPassForm.Controls["btn_apply"].Click += (s, e) =>
             {
@@ -366,7 +364,7 @@ namespace CryptedNotepad
                 }
                 else
                 {
-                    MessageBox.Show("Passwords are not equal", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"{LocalStrings.Passwords_are_not_equal}", $"{LocalStrings.Warning}", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             };
             askPassForm.Controls["txtbx2"].KeyDown += (s, e) =>
@@ -395,7 +393,7 @@ namespace CryptedNotepad
                 AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font,
                 ClientSize = new System.Drawing.Size(400, 225),
                 Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon"))),
-                Text = "Enter password",
+                Text = $"{LocalStrings.Enter_password}",
                 MaximizeBox = false,
                 MaximumSize = new System.Drawing.Size(400, 225),
                 MinimumSize = new System.Drawing.Size(400, 225),
@@ -415,7 +413,7 @@ namespace CryptedNotepad
                 Name = "btn_apply",
                 Location = new Point(77, 150),
                 Width = 245,
-                Text = "Apply"
+                Text = $"{LocalStrings.Apply}"
             });
 
             askPassForm.Controls["txtbx1"].KeyDown += (s, e) =>
@@ -479,6 +477,7 @@ namespace CryptedNotepad
             {
                 #region simple load txt
                 richTextBox.Text = File.ReadAllText(filePath, GetEncoding(filePath));
+                saved = true;
                 #endregion 
             }
             else
@@ -513,8 +512,9 @@ namespace CryptedNotepad
                                     string text = Encryption.DecryptString(dataFile, Password);
                                     richTextBox.Text = text;
                                     FilePath = filePath;
+                                    saved = true;
                                 }
-                                catch { MessageBox.Show("Access denied"); }
+                                catch { MessageBox.Show($"{LocalStrings.Access_denied}"); }
                             }));
                             UnlockProgram();
                         }
@@ -522,7 +522,7 @@ namespace CryptedNotepad
                     }).Start();
                     #endregion
                 }
-                catch { MessageBox.Show("An error occurred while decrypting file", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                catch { MessageBox.Show($"{LocalStrings.An_error_decrypting_file}", $"{LocalStrings.Error}", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
         }
         void SaveFile(string savePath)
@@ -533,9 +533,10 @@ namespace CryptedNotepad
                 richTextBox.Invoke(new MethodInvoker(() =>
                 {
                     File.WriteAllBytes(savePath, Encryption.EncryptString(richTextBox.Text, Password));
-                    MessageBox.Show("File saved", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"{LocalStrings.File_saved}", $"{LocalStrings.Info}", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }));
                 UnlockProgram();
+                saved = true;
             }).Start();
         }
     }
