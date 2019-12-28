@@ -124,253 +124,6 @@
     <value>tool_saveAs</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 450</value>
-  </data>
-  <data name="&gt;&gt;tool_open.Name" xml:space="preserve">
-    <value>tool_open</value>
-  </data>
-  <data name="&gt;&gt;pnl_status.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tool_save.Text" xml:space="preserve">
-    <value>&amp;Save</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
-    <value>richTextBox</value>
-  </data>
-  <data name="progressBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>621, 10</value>
-  </data>
-  <data name="tool_save.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="&gt;&gt;tool_File.Name" xml:space="preserve">
-    <value>tool_File</value>
-  </data>
-  <data name="stripMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 24</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbl_status.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="progressBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 5</value>
-  </data>
-  <data name="tool_new.Text" xml:space="preserve">
-    <value>&amp;New</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainWindow</value>
-  </data>
-  <data name="&gt;&gt;progressBar.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="pnl_status.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 429</value>
-  </data>
-  <data name="&gt;&gt;stripMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lbl_status.Text" xml:space="preserve">
-    <value>Total chars: 0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="richTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="stripMenu.Text" xml:space="preserve">
-    <value>Stripmenu</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator.Name" xml:space="preserve">
-    <value>toolStripSeparator</value>
-  </data>
-  <data name="tool_find.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
-  </data>
-  <data name="tool_open.Text" xml:space="preserve">
-    <value>&amp;Open</value>
-  </data>
-  <data name="&gt;&gt;tool_about.Name" xml:space="preserve">
-    <value>tool_about</value>
-  </data>
-  <data name="lbl_status.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tool_File.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 20</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="tool_saveAs.Text" xml:space="preserve">
-    <value>Save &amp;As</value>
-  </data>
-  <data name="richTextBox.Text" xml:space="preserve">
-    <value />
-  </data>
-  <data name="&gt;&gt;richTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tool_new.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="tool_open.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="richTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 27</value>
-  </data>
-  <data name="&gt;&gt;tool_exit.Name" xml:space="preserve">
-    <value>tool_exit</value>
-  </data>
-  <data name="tool_exit.Text" xml:space="preserve">
-    <value>E&amp;xit</value>
-  </data>
-  <data name="progressBar.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;progressBar.Parent" xml:space="preserve">
-    <value>pnl_status</value>
-  </data>
-  <data name="&gt;&gt;tool_fontSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pnl_status.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tool_about.Text" xml:space="preserve">
-    <value>About</value>
-  </data>
-  <data name="tool_new.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAARFJREFUOE+tkNtKAlEYheel7B3qNeyNJC8ivCgjRFAwKFTSKIM8IaITdkJGS9Hx
-        XNN4GGfJHn9xxpk2c+EHi32x1/oufmFvxB5q2E0kVUUoXkLwOoviSwNUdYYN/uMsfI+Do2O+JJoWqW7n
-        JBhH4qm6loiSsyScLFPdju/81hhvQhMrVzcFqttZaEtDshHRxMpF7JnqVnRdh6LO0ekrhsBz6HUWBCKP
-        NLEym2sYjFVI7TFfcBpK0WSLttQxUWZoyb94kwZ8gf8yQbMt6nQBefiH+vcIlXeZL2CfZtjhRj9TNDsT
-        1Op95MW2e4H5cB/NIcqvXWRKX+4F5sOJnz1kKy3c5SR3AvbywhWwTzehyT4QhBXYzPbDF6Dr9QAAAABJ
-        RU5ErkJggg==
-</value>
-  </data>
-  <data name="&gt;&gt;lbl_status.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tool_info.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 20</value>
-  </data>
-  <data name="tool_new.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;tool_saveAs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tool_about.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;progressBar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;stripMenu.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="tool_save.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tool_info.Text" xml:space="preserve">
-    <value>Info</value>
-  </data>
-  <data name="&gt;&gt;tool_exit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="progressBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
-  </data>
-  <data name="&gt;&gt;tool_replace.Name" xml:space="preserve">
-    <value>tool_replace</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;lbl_status.Parent" xml:space="preserve">
-    <value>pnl_status</value>
-  </data>
-  <data name="lbl_status.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 3</value>
-  </data>
-  <data name="tool_saveAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
-  </data>
-  <data name="tool_open.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;progressBar.Name" xml:space="preserve">
-    <value>progressBar</value>
-  </data>
-  <data name="&gt;&gt;tool_new.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 6</value>
-  </data>
-  <data name="&gt;&gt;tool_save.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tool_File.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="pnl_status.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tool_find.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tool_find.Text" xml:space="preserve">
-    <value>Find</value>
-  </data>
-  <data name="tool_replace.Text" xml:space="preserve">
-    <value>Replace</value>
-  </data>
-  <data name="tool_fontSettings.Text" xml:space="preserve">
-    <value>Font settings</value>
-  </data>
-  <data name="&gt;&gt;tool_save.Name" xml:space="preserve">
-    <value>tool_save</value>
-  </data>
-  <data name="&gt;&gt;tool_find.Name" xml:space="preserve">
-    <value>tool_find</value>
-  </data>
-  <data name="pnl_status.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left, Right</value>
-  </data>
-  <data name="tool_find.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+F</value>
-  </data>
-  <data name="&gt;&gt;stripMenu.Name" xml:space="preserve">
-    <value>stripMenu</value>
-  </data>
-  <data name="&gt;&gt;tool_fontSettings.Name" xml:space="preserve">
-    <value>tool_fontSettings</value>
-  </data>
-  <data name="&gt;&gt;tool_edit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tool_edit.Name" xml:space="preserve">
-    <value>tool_edit</value>
-  </data>
-  <data name="tool_new.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+N</value>
-  </data>
-  <data name="&gt;&gt;stripMenu.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;richTextBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAAAAAACMuAAAjLgAAAAAAAAAA
@@ -447,6 +200,262 @@
         AB//gAAf/8AAH//AD/////////////////8=
 </value>
   </data>
+  <data name="&gt;&gt;pnl_status.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Name" xml:space="preserve">
+    <value>richTextBox</value>
+  </data>
+  <data name="progressBar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>621, 10</value>
+  </data>
+  <data name="tool_save.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="&gt;&gt;tool_File.Name" xml:space="preserve">
+    <value>tool_File</value>
+  </data>
+  <data name="stripMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 24</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbl_status.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="progressBar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 5</value>
+  </data>
+  <data name="tool_new.Text" xml:space="preserve">
+    <value>&amp;New</value>
+  </data>
+  <data name="tool_edit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="&gt;&gt;progressBar.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pnl_status.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 429</value>
+  </data>
+  <data name="lbl_status.Text" xml:space="preserve">
+    <value>Total chars: 0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="richTextBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="tool_new.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator.Name" xml:space="preserve">
+    <value>toolStripSeparator</value>
+  </data>
+  <data name="tool_find.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="&gt;&gt;tool_about.Name" xml:space="preserve">
+    <value>tool_about</value>
+  </data>
+  <data name="lbl_status.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tool_File.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="tool_info.Text" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="tool_saveAs.Text" xml:space="preserve">
+    <value>Save &amp;As</value>
+  </data>
+  <data name="richTextBox.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;richTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tool_new.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="&gt;&gt;tool_find.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="richTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 27</value>
+  </data>
+  <data name="&gt;&gt;tool_exit.Name" xml:space="preserve">
+    <value>tool_exit</value>
+  </data>
+  <data name="tool_exit.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="progressBar.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tool_fontSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="tool_open.Text" xml:space="preserve">
+    <value>&amp;Open</value>
+  </data>
+  <data name="tool_about.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="&gt;&gt;lbl_status.Name" xml:space="preserve">
+    <value>lbl_status</value>
+  </data>
+  <data name="tool_new.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAARFJREFUOE+tkNtKAlEYheel7B3qNeyNJC8ivCgjRFAwKFTSKIM8IaITdkJGS9Hx
+        XNN4GGfJHn9xxpk2c+EHi32x1/oufmFvxB5q2E0kVUUoXkLwOoviSwNUdYYN/uMsfI+Do2O+JJoWqW7n
+        JBhH4qm6loiSsyScLFPdju/81hhvQhMrVzcFqttZaEtDshHRxMpF7JnqVnRdh6LO0ekrhsBz6HUWBCKP
+        NLEym2sYjFVI7TFfcBpK0WSLttQxUWZoyb94kwZ8gf8yQbMt6nQBefiH+vcIlXeZL2CfZtjhRj9TNDsT
+        1Op95MW2e4H5cB/NIcqvXWRKX+4F5sOJnz1kKy3c5SR3AvbywhWwTzehyT4QhBXYzPbDF6Dr9QAAAABJ
+        RU5ErkJggg==
+</value>
+  </data>
+  <data name="&gt;&gt;lbl_status.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tool_info.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 20</value>
+  </data>
+  <data name="&gt;&gt;pnl_status.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tool_saveAs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="stripMenu.Text" xml:space="preserve">
+    <value>Stripmenu</value>
+  </data>
+  <data name="&gt;&gt;progressBar.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainWindow</value>
+  </data>
+  <data name="&gt;&gt;stripMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="tool_save.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;tool_exit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="progressBar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbl_status.Parent" xml:space="preserve">
+    <value>pnl_status</value>
+  </data>
+  <data name="lbl_status.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 3</value>
+  </data>
+  <data name="tool_saveAs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
+  </data>
+  <data name="tool_open.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="&gt;&gt;progressBar.Name" xml:space="preserve">
+    <value>progressBar</value>
+  </data>
+  <data name="tool_deleteProgram.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 6</value>
+  </data>
+  <data name="tool_save.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+S</value>
+  </data>
+  <data name="&gt;&gt;tool_deleteProgram.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tool_save.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tool_File.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pnl_status.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tool_info.Name" xml:space="preserve">
+    <value>tool_info</value>
+  </data>
+  <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 6</value>
+  </data>
+  <data name="tool_find.Text" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="tool_replace.Text" xml:space="preserve">
+    <value>Replace</value>
+  </data>
+  <data name="tool_fontSettings.Text" xml:space="preserve">
+    <value>Font settings</value>
+  </data>
+  <data name="&gt;&gt;tool_save.Name" xml:space="preserve">
+    <value>tool_save</value>
+  </data>
+  <data name="&gt;&gt;tool_find.Name" xml:space="preserve">
+    <value>tool_find</value>
+  </data>
+  <data name="pnl_status.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="tool_find.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+F</value>
+  </data>
+  <data name="&gt;&gt;stripMenu.Name" xml:space="preserve">
+    <value>stripMenu</value>
+  </data>
+  <data name="&gt;&gt;tool_fontSettings.Name" xml:space="preserve">
+    <value>tool_fontSettings</value>
+  </data>
+  <data name="&gt;&gt;tool_edit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="richTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tool_edit.Name" xml:space="preserve">
+    <value>tool_edit</value>
+  </data>
+  <data name="&gt;&gt;tool_deleteProgram.Name" xml:space="preserve">
+    <value>tool_deleteProgram</value>
+  </data>
+  <data name="tool_new.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
+    <value>Ctrl+N</value>
+  </data>
+  <data name="&gt;&gt;stripMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;richTextBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="stripMenu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
   <data name="tool_exit.Size" type="System.Drawing.Size, System.Drawing">
     <value>140, 22</value>
   </data>
@@ -459,17 +468,17 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="stripMenu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="pnl_status.Size" type="System.Drawing.Size, System.Drawing">
+    <value>797, 20</value>
   </data>
-  <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 6</value>
+  <data name="tool_save.Text" xml:space="preserve">
+    <value>&amp;Save</value>
   </data>
-  <data name="&gt;&gt;pnl_status.Name" xml:space="preserve">
-    <value>pnl_status</value>
+  <data name="&gt;&gt;tool_open.Name" xml:space="preserve">
+    <value>tool_open</value>
   </data>
-  <data name="tool_edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
+  <data name="tool_fontSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
   </data>
   <data name="tool_save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -486,20 +495,20 @@
         IwSUkyd6+HrShtGS0DvTU9G0aWDUM51KRfDOuKxowb9FktYATrQ4xbl82G8AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pnl_status.Size" type="System.Drawing.Size, System.Drawing">
-    <value>797, 20</value>
+  <data name="&gt;&gt;pnl_status.Name" xml:space="preserve">
+    <value>pnl_status</value>
   </data>
-  <data name="tool_save.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+S</value>
-  </data>
-  <data name="&gt;&gt;lbl_status.Name" xml:space="preserve">
-    <value>lbl_status</value>
+  <data name="tool_open.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 22</value>
   </data>
   <data name="&gt;&gt;tool_replace.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tool_info.Name" xml:space="preserve">
-    <value>tool_info</value>
+  <data name="&gt;&gt;tool_about.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tool_replace.Name" xml:space="preserve">
+    <value>tool_replace</value>
   </data>
   <data name="&gt;&gt;pnl_status.Parent" xml:space="preserve">
     <value>$this</value>
@@ -528,23 +537,23 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="tool_fontSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 22</value>
+  <data name="&gt;&gt;progressBar.Parent" xml:space="preserve">
+    <value>pnl_status</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;tool_new.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
     <value>toolStripSeparator2</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>800, 450</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;stripMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tool_about.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="&gt;&gt;tool_open.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -568,19 +577,22 @@
   <data name="&gt;&gt;tool_new.Name" xml:space="preserve">
     <value>tool_new</value>
   </data>
+  <data name="tool_deleteProgram.Text" xml:space="preserve">
+    <value>Delete program</value>
+  </data>
   <data name="tool_File.Text" xml:space="preserve">
     <value>&amp;File</value>
   </data>
   <data name="lbl_status.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 13</value>
   </data>
-  <metadata name="stripMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ru</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
+  <metadata name="stripMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
 </root>

@@ -205,6 +205,15 @@ namespace CryptedNotepad {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Do you want to delete program?.
+        /// </summary>
+        internal static string SureDelete {
+            get {
+                return ResourceManager.GetString("SureDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Text files.
         /// </summary>
         internal static string Text_files {

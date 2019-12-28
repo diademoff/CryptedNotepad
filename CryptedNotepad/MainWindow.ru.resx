@@ -124,12 +124,6 @@
   <data name="lbl_status.Text" xml:space="preserve">
     <value>Всего символов: 0</value>
   </data>
-  <data name="tool_File.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 20</value>
-  </data>
-  <data name="tool_File.Text" xml:space="preserve">
-    <value>&amp;Файл</value>
-  </data>
   <data name="tool_new.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -218,11 +212,11 @@
   <data name="tool_exit.Text" xml:space="preserve">
     <value>В&amp;ыход</value>
   </data>
-  <data name="tool_edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 20</value>
+  <data name="tool_File.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 20</value>
   </data>
-  <data name="tool_edit.Text" xml:space="preserve">
-    <value>Редактировать</value>
+  <data name="tool_File.Text" xml:space="preserve">
+    <value>&amp;Файл</value>
   </data>
   <data name="tool_find.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 22</value>
@@ -236,17 +230,23 @@
   <data name="tool_replace.Text" xml:space="preserve">
     <value>Заменить</value>
   </data>
+  <data name="tool_edit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 20</value>
+  </data>
+  <data name="tool_edit.Text" xml:space="preserve">
+    <value>Редактировать</value>
+  </data>
+  <data name="tool_about.Text" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="tool_deleteProgram.Text" xml:space="preserve">
+    <value>Удалить программу</value>
+  </data>
   <data name="tool_info.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 20</value>
   </data>
   <data name="tool_info.Text" xml:space="preserve">
     <value>Справка</value>
-  </data>
-  <data name="tool_about.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
-  </data>
-  <data name="tool_about.Text" xml:space="preserve">
-    <value>О программе</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

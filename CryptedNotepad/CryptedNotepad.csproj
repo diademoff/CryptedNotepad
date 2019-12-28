@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigSaver.cs" />
     <Compile Include="Encryption.cs" />
     <Compile Include="Extentions.cs" />
     <Compile Include="FileAssociation.cs" />

@@ -1,6 +1,6 @@
 # CryptedNotepad  ![](https://github.com/diademoff/CryptedNotepad/blob/master/CryptedNotepad/icon.ico)
 ### Features
-- Simple to install and ininstall
+- Simple to install and uninstall
 - Open source
 - Unique encryption algorithm
 - UI like notepad.exe

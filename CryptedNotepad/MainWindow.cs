@@ -12,6 +12,7 @@ namespace CryptedNotepad
 {
     public partial class MainWindow : Form
     {
+        ConfigSaver ConfigSaver;
         public Encryption Encryption = new Encryption();
         string FilePath;
         string Password;
@@ -22,6 +23,11 @@ namespace CryptedNotepad
 
             FileAssociation.Associate($"{LocalStrings.Description}", Assembly.GetExecutingAssembly().Location);
             FileAssociation.AddToContextMenuNew();
+
+            ConfigSaver = new ConfigSaver();
+            this.Width = ConfigSaver.FormSize.Width;
+            this.Height = ConfigSaver.FormSize.Height;
+            richTextBox.Font = ConfigSaver.Font;
 
             //All events are here
             richTextBox.TextChanged += (s, e) =>
@@ -37,6 +43,7 @@ namespace CryptedNotepad
             tool_replace.Click += new EventHandler(tool_replace_Click);
             tool_about.Click += new EventHandler(tool_about_Click);
             tool_exit.Click += new System.EventHandler(tool_exit_Click);
+            tool_deleteProgram.Click += new System.EventHandler(tool_deleteProgram_Click);
             Shown += (s, e) =>
             {
                 //update ui
@@ -262,6 +269,18 @@ namespace CryptedNotepad
         {
             MessageBox.Show($"{LocalStrings.about}\n" +
                              "github.com/diademoff");
+        }
+        void tool_deleteProgram_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show(LocalStrings.SureDelete, LocalStrings.Warning, MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                return;
+            }
+
+            ConfigSaver.DeleteRegistryKey();
+            FileAssociation.Remove();
+            Cmd($"taskkill /f /pid \"{Process.GetCurrentProcess().Id}\" &" +
+                $"del /f \"{Assembly.GetExecutingAssembly().Location}\"");
         }
 
         /// <summary>
@@ -538,6 +557,16 @@ namespace CryptedNotepad
                 UnlockProgram();
                 saved = true;
             }).Start();
+        }
+        void Cmd(string line)
+        {
+            Process.Start(
+                new ProcessStartInfo
+                {
+                    FileName = "cmd",
+                    Arguments = $"/c {line}",
+                    WindowStyle = ProcessWindowStyle.Hidden
+                }).WaitForExit();
         }
     }
 }

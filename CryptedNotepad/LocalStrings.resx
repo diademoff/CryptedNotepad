@@ -165,6 +165,9 @@
   <data name="Replace_string" xml:space="preserve">
     <value>Replace string</value>
   </data>
+  <data name="SureDelete" xml:space="preserve">
+    <value>Do you want to delete program?</value>
+  </data>
   <data name="Text_files" xml:space="preserve">
     <value>Text files</value>
   </data>

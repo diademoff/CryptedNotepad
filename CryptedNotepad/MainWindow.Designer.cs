@@ -22,6 +22,9 @@ namespace CryptedNotepad
                     return;
                 }
             }
+            ConfigSaver.Font = richTextBox.Font;
+            ConfigSaver.FormSize = this.Size;
+            ConfigSaver.Save();
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -58,6 +61,7 @@ namespace CryptedNotepad
             this.tool_replace = new System.Windows.Forms.ToolStripMenuItem();
             this.tool_info = new System.Windows.Forms.ToolStripMenuItem();
             this.tool_about = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_deleteProgram = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_status.SuspendLayout();
             this.stripMenu.SuspendLayout();
             this.SuspendLayout();
@@ -177,13 +181,19 @@ namespace CryptedNotepad
             // 
             resources.ApplyResources(this.tool_info, "tool_info");
             this.tool_info.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tool_about});
+            this.tool_about,
+            this.tool_deleteProgram});
             this.tool_info.Name = "tool_info";
             // 
             // tool_about
             // 
             resources.ApplyResources(this.tool_about, "tool_about");
             this.tool_about.Name = "tool_about";
+            // 
+            // tool_deleteProgram
+            // 
+            resources.ApplyResources(this.tool_deleteProgram, "tool_deleteProgram");
+            this.tool_deleteProgram.Name = "tool_deleteProgram";
             // 
             // MainWindow
             // 
@@ -225,6 +235,7 @@ namespace CryptedNotepad
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem tool_exit;
         private System.Windows.Forms.ToolStripMenuItem tool_fontSettings;
+        private ToolStripMenuItem tool_deleteProgram;
     }
 }
 
