@@ -136,7 +136,7 @@
 </value>
   </data>
   <data name="tool_new.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tool_new.Text" xml:space="preserve">
     <value>&amp;Создать</value>
@@ -158,13 +158,13 @@
 </value>
   </data>
   <data name="tool_open.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tool_open.Text" xml:space="preserve">
     <value>&amp;Открыть</value>
   </data>
   <data name="toolStripSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="tool_save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -183,31 +183,31 @@
 </value>
   </data>
   <data name="tool_save.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tool_save.Text" xml:space="preserve">
     <value>&amp;Сохранить</value>
   </data>
   <data name="tool_saveAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tool_saveAs.Text" xml:space="preserve">
     <value>Сохранить &amp;Как</value>
   </data>
   <data name="tool_fontSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tool_fontSettings.Text" xml:space="preserve">
     <value>Настройки шрифта</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 6</value>
+    <value>177, 6</value>
   </data>
   <data name="tool_exit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="tool_exit.Text" xml:space="preserve">
     <value>В&amp;ыход</value>
@@ -236,8 +236,14 @@
   <data name="tool_edit.Text" xml:space="preserve">
     <value>Редактировать</value>
   </data>
+  <data name="tool_about.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 22</value>
+  </data>
   <data name="tool_about.Text" xml:space="preserve">
     <value>О программе</value>
+  </data>
+  <data name="tool_deleteProgram.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 22</value>
   </data>
   <data name="tool_deleteProgram.Text" xml:space="preserve">
     <value>Удалить программу</value>

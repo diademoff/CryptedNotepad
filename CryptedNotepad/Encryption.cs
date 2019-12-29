@@ -33,16 +33,13 @@ namespace CryptedNotepad
             #endregion
         }
 
-        public int ValueProgress { get; private set; } = 0;
-        public int MaxValueProgress { get; private set; } = 0;
-
         public byte[] EncryptString(string input, string password)
         {
             HashSet<CryptElement> unique = new HashSet<CryptElement>();
-            MaxValueProgress = input.Length;
+            MainWindow.MaxValueProgress = input.Length;
             for (int i = 0; i < input.Length; i++)
             {
-                ValueProgress = i;
+                MainWindow.ValueProgress = i;
                 CryptElement current = new CryptElement(input[i]);
                 if (unique.Contains(current))
                 {
@@ -58,7 +55,7 @@ namespace CryptedNotepad
             byte[] arr = ObjectToByteArray(unique);
             byte[] encrypted = EncryptByteArray(arr, password);
             encrypted = EncryptByteArray(encrypted, string.Join("", password.Reverse()));
-            ValueProgress = MaxValueProgress = 0;
+            MainWindow.ValueProgress = MainWindow.MaxValueProgress = 0;
             return encrypted;
         }
 
@@ -67,7 +64,7 @@ namespace CryptedNotepad
             byte[] decryped = DecryptByteArray(input, string.Join("", password.Reverse()));
             decryped = DecryptByteArray(decryped, password);
             HashSet<CryptElement> unique = ByteArrayToObject(decryped) as HashSet<CryptElement>;
-            MaxValueProgress = unique.Count;
+            MainWindow.MaxValueProgress = unique.Count;
             int i = 0;
             List<char> result = new List<char>();
             foreach (CryptElement chr in unique)
@@ -82,9 +79,9 @@ namespace CryptedNotepad
                     result[index] = symbol[0];
                 }
                 i++;
-                ValueProgress = i;
+                MainWindow.ValueProgress = i;
             }
-            ValueProgress = MaxValueProgress = 0;
+            MainWindow.ValueProgress = MainWindow.MaxValueProgress = 0;
             return string.Join("", result);
         }
 

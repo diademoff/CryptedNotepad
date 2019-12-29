@@ -17,6 +17,8 @@ namespace CryptedNotepad
         string FilePath;
         string Password;
         bool saved = true;
+        public static int MaxValueProgress = 0;
+        public static int ValueProgress = 0;
         public MainWindow(string path)
         {
             InitializeComponent();
@@ -48,7 +50,7 @@ namespace CryptedNotepad
             {
                 //update ui
                 #region
-                new Task(() =>
+                new Thread(() =>
                 {
                     while (true)
                     {
@@ -60,8 +62,8 @@ namespace CryptedNotepad
                                 this.Text = Path.GetFileName(FilePath) + t;
                                 try
                                 {
-                                    progressBar.Maximum = Encryption.MaxValueProgress;
-                                    progressBar.Value = Encryption.ValueProgress;
+                                    progressBar.Maximum = MaxValueProgress;
+                                    progressBar.Value = ValueProgress;
                                 }
                                 catch { }
                             }));
@@ -69,7 +71,8 @@ namespace CryptedNotepad
                         }
                         catch { }
                     }
-                }).Start();
+                })
+                { IsBackground = true }.Start();
                 #endregion
                 if (path == "")
                 {
@@ -139,7 +142,7 @@ namespace CryptedNotepad
                 return;
             }
             FilePath = sfd.FileName;
-            Thread thread = new Thread(() => SaveFile(FilePath));
+            Thread thread = new Thread(() => SaveFile(FilePath)) { IsBackground = true };
             thread.Start();
         }
         void tool_fontSettings_Click(object sender, EventArgs e)
@@ -186,7 +189,7 @@ namespace CryptedNotepad
             };
             findForm.Controls["btn_find"].Click += (s, ee) =>
             {
-                FindText(findForm.Controls["txtbx"].Text, progressBar);
+                new Thread(() => FindText(findForm.Controls["txtbx"].Text)) { IsBackground = true }.Start();
             };
             findForm.Show();
             findForm.FormClosing += (s, ee) =>
@@ -458,19 +461,29 @@ namespace CryptedNotepad
             }
             #endregion
         }
-        void FindText(string textToFind, ProgressBar progressBar)
+        void FindText(string textToFind)
         {
-            int len = this.richTextBox.TextLength;
-            int index = 0;
-            int lastIndex = this.richTextBox.Text.LastIndexOf(textToFind);
-            progressBar.Maximum = lastIndex + 1;
+            int len = -1;
+            int index = -1;
+            int lastIndex = -1;
+            this.Invoke(new MethodInvoker(() =>
+            {
+                len = this.richTextBox.TextLength;
+                index = 0;
+                lastIndex = this.richTextBox.Text.LastIndexOf(textToFind);
+            }));
+            MaxValueProgress = lastIndex + 1;
             while (index < lastIndex)
             {
-                this.richTextBox.Find(textToFind, index, len, RichTextBoxFinds.None);
-                this.richTextBox.SelectionBackColor = Color.Yellow;
-                index = this.richTextBox.Text.IndexOf(textToFind, index) + 1;
-                progressBar.Value = index;
+                this.Invoke(new MethodInvoker(() =>
+                {
+                    this.richTextBox.Find(textToFind, index, len, RichTextBoxFinds.None);
+                    this.richTextBox.SelectionBackColor = Color.Yellow;
+                    index = this.richTextBox.Text.IndexOf(textToFind, index) + 1;
+                    ValueProgress = index;
+                }));
             }
+            MainWindow.ValueProgress = MainWindow.MaxValueProgress = 0;
         }
         void UnlockProgram()
         {
@@ -479,6 +492,7 @@ namespace CryptedNotepad
                 tool_File.Enabled = true;
                 tool_edit.Enabled = true;
                 tool_info.Enabled = true;
+                richTextBox.Enabled = true;
             }));
         }
         void LockProgram()
@@ -488,6 +502,7 @@ namespace CryptedNotepad
                 tool_File.Enabled = false;
                 tool_edit.Enabled = false;
                 tool_info.Enabled = false;
+                richTextBox.Enabled = false;
             }));
         }
         void LoadFile(string filePath)
@@ -520,25 +535,27 @@ namespace CryptedNotepad
                 {
                     #region decrypt file
                     LockProgram();
-                    new Task(() =>
+                    string text = "";
+                    richTextBox.Invoke(new MethodInvoker(() =>
+                    {
+                        text = richTextBox.Text;
+                    }));
+                    new Thread(() =>
                     {
                         try
                         {
+                            string decrypted = Encryption.DecryptString(dataFile, Password);
                             richTextBox.Invoke(new MethodInvoker(() =>
                             {
-                                try
-                                {
-                                    string text = Encryption.DecryptString(dataFile, Password);
-                                    richTextBox.Text = text;
-                                    FilePath = filePath;
-                                    saved = true;
-                                }
-                                catch { MessageBox.Show($"{LocalStrings.Access_denied}"); }
+                                richTextBox.Text = decrypted;
                             }));
+                            FilePath = filePath;
+                            saved = true;
                             UnlockProgram();
                         }
-                        catch { }
-                    }).Start();
+                        catch { MessageBox.Show($"{LocalStrings.Access_denied}"); }
+                    })
+                    { IsBackground = true }.Start();
                     #endregion
                 }
                 catch { MessageBox.Show($"{LocalStrings.An_error_decrypting_file}", $"{LocalStrings.Error}", MessageBoxButtons.OK, MessageBoxIcon.Error); }
@@ -547,16 +564,21 @@ namespace CryptedNotepad
         void SaveFile(string savePath)
         {
             LockProgram();
-            new Task(() =>
+            new Thread(() =>
             {
+                string text = "";
                 richTextBox.Invoke(new MethodInvoker(() =>
                 {
-                    File.WriteAllBytes(savePath, Encryption.EncryptString(richTextBox.Text, Password));
-                    MessageBox.Show($"{LocalStrings.File_saved}", $"{LocalStrings.Info}", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    text = richTextBox.Text;
                 }));
+
+                var crypted = Encryption.EncryptString(text, Password);
+                File.WriteAllBytes(savePath, crypted);
+                MessageBox.Show($"{LocalStrings.File_saved}", $"{LocalStrings.Info}", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnlockProgram();
                 saved = true;
-            }).Start();
+            })
+            { IsBackground = true }.Start();
         }
         void Cmd(string line)
         {
