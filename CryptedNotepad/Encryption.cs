@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -10,79 +9,25 @@ namespace CryptedNotepad
 {
     public class Encryption
     {
-
-        [Serializable]
-        private class CryptElement
-        {
-            public char Symbol { get; private set; }
-            public List<int> Indexes { get; set; }
-
-            #region constructor
-            public CryptElement(char symbol)
-            {
-                Symbol = symbol;
-                Indexes = new List<int>();
-            }
-            #endregion
-
-            #region Get hash code
-            public override int GetHashCode()
-            {
-                return Symbol;
-            }
-            #endregion
-        }
-
         public byte[] EncryptString(string input, string password)
         {
-            HashSet<CryptElement> unique = new HashSet<CryptElement>();
-            MainWindow.MaxValueProgress = input.Length;
-            for (int i = 0; i < input.Length; i++)
-            {
-                MainWindow.ValueProgress = i;
-                CryptElement current = new CryptElement(input[i]);
-                if (unique.Contains(current))
-                {
-                    unique.TryGetValue(current, out CryptElement element);
-                    element.Indexes.Add(i);
-                }
-                else
-                {
-                    current.Indexes.Add(i);
-                    unique.Add(current);
-                }
-            }
-            byte[] arr = ObjectToByteArray(unique);
-            byte[] encrypted = EncryptByteArray(arr, password);
-            encrypted = EncryptByteArray(encrypted, string.Join("", password.Reverse()));
-            MainWindow.ValueProgress = MainWindow.MaxValueProgress = 0;
-            return encrypted;
-        }
+            string cryptoPass = sha256(password);
 
+            byte[] result = Encoding.UTF8.GetBytes(input);
+            result = result.Reverse().ToArray();
+            result = EncryptByteArray(result, cryptoPass);
+            result = Compress(result);
+            result = result.Reverse().ToArray();
+            return result;
+        }
         public string DecryptString(byte[] input, string password)
         {
-            byte[] decryped = DecryptByteArray(input, string.Join("", password.Reverse()));
-            decryped = DecryptByteArray(decryped, password);
-            HashSet<CryptElement> unique = ByteArrayToObject(decryped) as HashSet<CryptElement>;
-            MainWindow.MaxValueProgress = unique.Count;
-            int i = 0;
-            List<char> result = new List<char>();
-            foreach (CryptElement chr in unique)
-            {
-                string symbol = chr.Symbol.ToString();
-                foreach (int index in chr.Indexes)
-                {
-                    while (result.Count <= index)
-                    {
-                        result.Add('?');
-                    }
-                    result[index] = symbol[0];
-                }
-                i++;
-                MainWindow.ValueProgress = i;
-            }
-            MainWindow.ValueProgress = MainWindow.MaxValueProgress = 0;
-            return string.Join("", result);
+            string cryptoPass = sha256(password);
+            input = input.Reverse().ToArray();
+            input = Decompress(input);
+            input = DecryptByteArray(input, cryptoPass);
+            input = input.Reverse().ToArray();
+            return Encoding.UTF8.GetString(input);
         }
 
         byte[] EncryptByteArray(byte[] bytesToEncrypt, string password)
@@ -114,7 +59,7 @@ namespace CryptedNotepad
 
             return encrypted;
         }
-        public static byte[] DecryptByteArray(byte[] bytesToDecrypt, string password)
+        byte[] DecryptByteArray(byte[] bytesToDecrypt, string password)
         {
             (byte[] messageLengthAs32Bits, byte[] bytesWithIv) = bytesToDecrypt.Shift(4); // get the message length
             (byte[] ivSeed, byte[] encrypted) = bytesWithIv.Shift(16);                    // get the initialization vector
@@ -140,44 +85,35 @@ namespace CryptedNotepad
             }
             return decrypted;
         }
-        byte[] PerformCryptography(byte[] data, ICryptoTransform cryptoTransform)
+        byte[] Compress(byte[] data)
         {
-            using (MemoryStream ms = new MemoryStream())
-            using (CryptoStream cryptoStream = new CryptoStream(ms, cryptoTransform, CryptoStreamMode.Write))
+            MemoryStream output = new MemoryStream();
+            using (DeflateStream dstream = new DeflateStream(output, CompressionLevel.Optimal))
             {
-                cryptoStream.Write(data, 0, data.Length);
-                cryptoStream.FlushFinalBlock();
-
-                return ms.ToArray();
+                dstream.Write(data, 0, data.Length);
             }
+            return output.ToArray();
         }
-
-
-        // Convert an object to a byte array
-        byte[] ObjectToByteArray(object obj)
+        byte[] Decompress(byte[] data)
         {
-            if (obj == null)
+            MemoryStream input = new MemoryStream(data);
+            MemoryStream output = new MemoryStream();
+            using (DeflateStream dstream = new DeflateStream(input, CompressionMode.Decompress))
             {
-                return null;
+                dstream.CopyTo(output);
             }
-
-            BinaryFormatter bf = new BinaryFormatter();
-            MemoryStream ms = new MemoryStream();
-            bf.Serialize(ms, obj);
-
-            return ms.ToArray();
+            return output.ToArray();
         }
-
-        // Convert a byte array to an Object
-        object ByteArrayToObject(byte[] arrBytes)
+        string sha256(string str)
         {
-            MemoryStream memStream = new MemoryStream();
-            BinaryFormatter binForm = new BinaryFormatter();
-            memStream.Write(arrBytes, 0, arrBytes.Length);
-            memStream.Seek(0, SeekOrigin.Begin);
-            object obj = binForm.Deserialize(memStream);
-
-            return obj;
+            var crypt = new SHA256Managed();
+            var hash = new StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(str));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
         }
     }
 }

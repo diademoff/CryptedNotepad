@@ -5,7 +5,6 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CryptedNotepad
@@ -572,7 +571,7 @@ namespace CryptedNotepad
                     text = richTextBox.Text;
                 }));
 
-                var crypted = Encryption.EncryptString(text, Password);
+                byte[] crypted = Encryption.EncryptString(text, Password);
                 File.WriteAllBytes(savePath, crypted);
                 MessageBox.Show($"{LocalStrings.File_saved}", $"{LocalStrings.Info}", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 UnlockProgram();

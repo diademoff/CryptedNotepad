@@ -12,12 +12,15 @@ namespace CryptedNotepad.Tests
         {
             Encryption encryption = new Encryption();
 
-            string key = RandomString(rnd.Next(5, 16));
-            string clear_str = RandomString(rnd.Next(100, 500));
-            byte[] enc = encryption.EncryptString(clear_str, key);
-            string dec = encryption.DecryptString(enc, key);
+            for (int i = 0; i < 100; i++)
+            {
+                string key = RandomString(rnd.Next(5, 16));
+                string clear_str = RandomString(20000);
+                byte[] enc = encryption.EncryptString(clear_str, key);
+                string dec = encryption.DecryptString(enc, key);
+                Assert.AreEqual(clear_str, dec);
+            }
 
-            Assert.AreEqual(clear_str, dec);
         }
 
         Random rnd = new Random();
