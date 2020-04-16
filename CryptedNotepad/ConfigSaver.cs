@@ -9,6 +9,7 @@ namespace CryptedNotepad
     {
         public Font Font { get; set; }
         public Size FormSize { get; set; }
+        public bool IsAssociated { get; set; }
 
         public ConfigSaver()
         {
@@ -17,6 +18,7 @@ namespace CryptedNotepad
                 RegistryKey reg = Registry.CurrentUser.CreateSubKey("Software\\ctxt", true);
                 FormSize = new Size((int)reg.GetValue("SizeX"), (int)reg.GetValue("SizeY"));
                 Font = ByteToFont(reg.GetValue("Font") as byte[]);
+                IsAssociated = (int)reg.GetValue("IsAssociated") == 1 ? true : false;
                 reg.Flush();
                 reg.Close();
             }
@@ -24,6 +26,7 @@ namespace CryptedNotepad
             {
                 FormSize = new Size(815, 485);
                 Font = new Font("Arial", 12);
+                IsAssociated = false;
             }
         }
 
@@ -35,6 +38,7 @@ namespace CryptedNotepad
                 reg.SetValue("SizeX", FormSize.Width);
                 reg.SetValue("SizeY", FormSize.Height);
                 reg.SetValue("Font", FontToByte(Font));
+                reg.SetValue("IsAssociated", IsAssociated ? 1 : 0);
                 reg.Flush();
                 reg.Close();
             }

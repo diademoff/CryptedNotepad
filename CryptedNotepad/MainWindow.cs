@@ -22,10 +22,15 @@ namespace CryptedNotepad
         {
             InitializeComponent();
 
-            FileAssociation.Associate($"{LocalStrings.Description}", Assembly.GetExecutingAssembly().Location);
-            FileAssociation.AddToContextMenuNew();
-
             ConfigSaver = new ConfigSaver();
+
+            if (!ConfigSaver.IsAssociated)
+            {
+                FileAssociation.Associate($"{LocalStrings.Description}", Assembly.GetExecutingAssembly().Location);
+                FileAssociation.AddToContextMenuNew();
+                ConfigSaver.IsAssociated = true;
+            }
+
             this.Width = ConfigSaver.FormSize.Width;
             this.Height = ConfigSaver.FormSize.Height;
             richTextBox.Font = ConfigSaver.Font;
