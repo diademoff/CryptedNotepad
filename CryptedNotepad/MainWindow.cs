@@ -24,7 +24,7 @@ namespace CryptedNotepad
 
             ConfigSaver = new ConfigSaver();
 
-            if (!ConfigSaver.IsAssociated)
+            if (!ConfigSaver.IsAssociated || !FileAssociation.IsAssociated())
             {
                 FileAssociation.Associate($"{LocalStrings.Description}", Assembly.GetExecutingAssembly().Location);
                 FileAssociation.AddToContextMenuNew();

@@ -41,7 +41,30 @@ namespace CryptedNotepad
             catch { }
         }
 
-        public static bool IsAssociated => (Registry.ClassesRoot.OpenSubKey(FILE_EXTENSION, false) != null);
+        public static bool IsAssociated()
+        {
+            try
+            {
+                if (Registry.ClassesRoot.OpenSubKey(FILE_EXTENSION).GetValue("") as string != Application.ProductName)
+                    return false;
+
+                if (Application.ProductName != null && Application.ProductName.Length > 0)
+                {
+                    using (RegistryKey key = Registry.ClassesRoot.OpenSubKey(Application.ProductName))
+                    {
+
+                        if (key.OpenSubKey(@"Shell\Open\Command").GetValue("") as string != ToShortPathName(Application.ExecutablePath) + " \"%1\"")
+                            return false;
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
 
         public static void Remove()
         {
